@@ -1,0 +1,270 @@
+{
+  "provider": {
+    "name": "lemService"
+  },
+  "consumer": {
+    "name": "portal"
+  },
+  "interactions": [
+    {
+      "description": "get entitlement call",
+      "request": {
+        "method": "GET",
+        "path": "/service/lem/v2/admin/sddsdsd/entitlements",
+        "query": {
+          "includeRelationships": [
+            "true"
+          ],
+          "guid": [
+            "201606300402219"
+          ],
+          "source": [
+            "pelican,legacy"
+          ]
+        },
+        "matchingRules": {
+          "query": {
+            "includeRelationships": {
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "true"
+                }
+              ],
+              "combine": "AND"
+            },
+            "source": {
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "pelican,legacy"
+                }
+              ],
+              "combine": "AND"
+            },
+            "guid": {
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "201606300402219"
+                }
+              ],
+              "combine": "AND"
+            }
+          },
+          "path": {
+
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=UTF-8"
+        },
+        "body": {
+          "entitlements": [
+            {
+              "entitlementEndDate": "string",
+              "meteringType": "string",
+              "parentFeatureId": "string",
+              "featureName": "string",
+              "featureType": "string",
+              "orderOrigin": "string",
+              "active": true,
+              "userType": "string",
+              "source": "string",
+              "entitlementType": "string",
+              "featureId": "string",
+              "entitlementStartDate": "string"
+            },
+            {
+              "entitlementEndDate": "string",
+              "meteringType": "string",
+              "parentFeatureId": "string",
+              "featureName": "string",
+              "featureType": "string",
+              "orderOrigin": "string",
+              "active": true,
+              "userType": "string",
+              "source": "string",
+              "entitlementType": "string",
+              "featureId": "string",
+              "entitlementStartDate": "string"
+            }
+          ]
+        },
+        "matchingRules": {
+          "body": {
+            "$.entitlements": {
+              "matchers": [
+                {
+                  "match": "type",
+                  "min": 2
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.entitlements[*].entitlementStartDate": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.entitlements[*].entitlementEndDate": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.entitlements[*].parentFeatureId": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.entitlements[*].featureId": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.entitlements[*].featureName": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.entitlements[*].featureType": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.entitlements[*].entitlementType": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.entitlements[*].userType": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.entitlements[*].meteringType": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.entitlements[*].active": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.entitlements[*].source": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.entitlements[*].orderOrigin": {
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        },
+        "generators": {
+          "body": {
+            "$.entitlements[*].entitlementStartDate": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.entitlements[*].entitlementEndDate": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.entitlements[*].parentFeatureId": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.entitlements[*].featureId": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.entitlements[*].featureName": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.entitlements[*].featureType": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.entitlements[*].entitlementType": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.entitlements[*].userType": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.entitlements[*].meteringType": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.entitlements[*].source": {
+              "type": "RandomString",
+              "size": 20
+            },
+            "$.entitlements[*].orderOrigin": {
+              "type": "RandomString",
+              "size": 20
+            }
+          }
+        }
+      },
+      "providerStates": [
+        {
+          "name": "valid oxygenId "
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "pact-specification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "3.5.15"
+    }
+  }
+}
